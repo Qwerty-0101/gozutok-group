@@ -11,6 +11,24 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
+async function verifyRecaptcha(token: string): Promise<boolean> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  // Secret tanımlı değilse reCAPTCHA doğrulaması atlanır.
+  if (!secret) return true;
+  if (!token) return false;
+  try {
+    const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token }),
+    });
+    const data = (await res.json()) as { success?: boolean; score?: number };
+    return data.success === true && (typeof data.score !== "number" || data.score >= 0.5);
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(request: Request) {
   try {
     const form = await request.formData();
@@ -18,6 +36,14 @@ export async function POST(request: Request) {
     // Honeypot: gizli "website" alanı doluysa botları sessizce başarılıymış gibi geçir.
     if (form.get("website")) {
       return NextResponse.json({ success: true, message: "Mesajınız alındı." });
+    }
+
+    const recaptchaOk = await verifyRecaptcha(String(form.get("recaptchaToken") ?? ""));
+    if (!recaptchaOk) {
+      return NextResponse.json(
+        { success: false, message: "Doğrulama başarısız oldu. Lütfen tekrar deneyin." },
+        { status: 400 },
+      );
     }
 
     const ad = String(form.get("ad") ?? "").trim();

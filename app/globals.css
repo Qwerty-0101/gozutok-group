@@ -323,3 +323,8 @@
   .hero-orb-drift { animation: none; }
   .hero-in-1, .hero-in-2, .hero-in-3, .hero-in-4, .hero-in-5 { animation: none; opacity: 1; transform: none; }
 }
+
+/* reCAPTCHA v3 rozetini gizle (koşulları form altındaki metinle karşılanır) */
+.grecaptcha-badge {
+  visibility: hidden;
+}

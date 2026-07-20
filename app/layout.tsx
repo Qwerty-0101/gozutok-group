@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import { RecaptchaProvider } from "./recaptcha-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,7 +37,10 @@ export default function RootLayout({
       lang="tr"
       className={`${inter.variable} ${manrope.variable} scroll-smooth`}
     >
-      <body className="overflow-x-hidden">{children}</body>
+      <body className="overflow-x-hidden">
+        {children}
+        <RecaptchaProvider />
+      </body>
     </html>
   );
 }
