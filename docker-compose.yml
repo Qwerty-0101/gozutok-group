@@ -11,5 +11,3 @@ services:
       CONTACT_TO: ${CONTACT_TO}
       RECAPTCHA_SITE_KEY: ${RECAPTCHA_SITE_KEY}
       RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY}
-    expose:
-      - "3001"
