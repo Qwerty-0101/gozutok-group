@@ -540,6 +540,7 @@ export default function Home() {
               </article>
 
               <article className="brand-card reveal group relative min-h-[480px] overflow-hidden rounded-[2rem] bg-[#dbe7ec] p-7 sm:p-10 lg:col-span-4" style={{ "--glow": "rgba(0,48,73,.4)" } as React.CSSProperties}>
+                <a href={BRAND_LINKS.defence} target="_blank" rel="noopener noreferrer" aria-label="Gözütok Defence web sitesi" className="absolute inset-0 z-20" />
                 <div className="relative z-10 flex h-full flex-col">
                   <div className="flex items-start justify-between"><span className="text-xs font-bold tracking-[.18em] text-brick">03 / 05</span><span className="text-[10px] font-bold tracking-widest uppercase">Savunma</span></div>
                   <div className="relative my-8 h-56 overflow-hidden rounded-[1.5rem]">
@@ -741,13 +742,14 @@ const BRAND_LINKS = {
   teknik: "https://teknovateknik.com/",
   build: "https://www.gozutokbuild.com/",
   chluxe: "https://www.chluxe.tr/",
+  defence: "https://gozutokdefence.com/tr",
 } as const;
 
 const LOGO_SET: { src: string; alt: string; href: string | null }[] = [
   { src: "/q-01.svg", alt: "Gözütok Flux", href: BRAND_LINKS.flux },
   { src: "/q-05.svg", alt: "Gözütok Metal Teknolojileri", href: BRAND_LINKS.gmt },
   { src: "/q-04.svg", alt: "Chluxe Royal", href: BRAND_LINKS.chluxe },
-  { src: "/q-02.svg", alt: "Gözütok Defence", href: "#markalar" },
+  { src: "/q-02.svg", alt: "Gözütok Defence", href: BRAND_LINKS.defence },
   { src: "/q-03.svg", alt: "Gözütok Build", href: BRAND_LINKS.build },
   { src: "/q-07.svg", alt: "Gözütok Teknik Mühendislik", href: BRAND_LINKS.teknik },
   { src: "/iron1.svg", alt: "Gözütok Grup", href: "#markalar" },
