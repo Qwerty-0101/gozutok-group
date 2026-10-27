@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { getRecaptchaToken } from "./recaptcha";
+import { SiteFooter } from "./site-footer";
 
 export default function Home() {
   useEffect(() => {
@@ -690,48 +691,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer id="site-footer" data-nav-theme="dark" className="border-t-4 border-brick bg-space text-white">
-        <div className="shell">
-          <div className="grid gap-12 py-14 sm:py-16 lg:grid-cols-[1.15fr_.75fr_1fr] lg:gap-16">
-            <div className="max-w-md">
-              <a href="#top" className="inline-block text-3xl font-semibold text-cream sm:text-4xl">GÖZÜTOK</a>
-              <p className="mt-5 text-sm leading-7 text-white/55">Beş farklı uzmanlık alanını ortak yönetim anlayışı, sürdürülebilir büyüme ve kalıcı değer hedefiyle bir araya getiriyoruz.</p>
-            </div>
-
-            <div>
-              <h2 className="text-[11px] font-bold tracking-[.18em] text-steel uppercase">Bağlantılar</h2>
-              <nav aria-label="Footer menüsü" className="mt-5 grid gap-3 text-sm text-white/65">
-                <a href="#kurumsal" className="w-fit transition hover:text-white">Kurumsal</a>
-                <a href="#markalar" className="w-fit transition hover:text-white">Markalar</a>
-                <a href="#ekosistem" className="w-fit transition hover:text-white">Ekosistem</a>
-                <a href="#surdurulebilirlik" className="w-fit transition hover:text-white">Sürdürülebilirlik</a>
-                <a href="#kariyer" className="w-fit transition hover:text-white">Kariyer</a>
-              </nav>
-            </div>
-
-            <div>
-              <h2 className="text-[11px] font-bold tracking-[.18em] text-steel uppercase">İletişim</h2>
-              <address className="mt-5 space-y-4 text-sm leading-6 not-italic text-white/65">
-                <p>Beştepe Mah. 40. Sk. Çakıroğlu Plaza<br />A Blok Kat: 4 Daire: 101<br />Yenimahalle / Ankara</p>
-                <p>
-                  <a href="tel:+905343696471" className="block w-fit transition hover:text-white">+90 534 369 64 71</a>
-                  <a href="mailto:info@gozutokmetal.com.tr" className="block w-fit transition hover:text-white">info@gozutokmetal.com.tr</a>
-                </p>
-              </address>
-              <a href="#iletisim" className="group mt-6 inline-flex min-h-11 items-center gap-3 border-b border-brick pb-1 text-sm font-semibold text-white transition hover:text-cream">
-                İletişime geç <span className="transition-transform group-hover:translate-x-1">→</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-4 border-t border-white/10 py-6 text-[11px] text-white/35 sm:flex-row sm:items-center sm:justify-between">
-            <span>© 2026 Gözütok Grup. Tüm hakları saklıdır.</span>
-            <a href="#top" aria-label="Sayfanın başına dön" className="group inline-flex w-fit items-center gap-2 text-white/50 transition hover:text-white">
-              Başa dön <span className="transition-transform group-hover:-translate-y-1">↑</span>
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

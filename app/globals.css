@@ -86,6 +86,48 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .policy-prose {
+    @apply text-base leading-8 text-space/75;
+  }
+
+  .policy-prose > * + * {
+    @apply mt-5;
+  }
+
+  .policy-prose h2 {
+    @apply mt-12 text-2xl font-semibold tracking-[-.03em] text-space;
+  }
+
+  .policy-prose h3 {
+    @apply mt-9 text-lg font-semibold tracking-[-.02em] text-space;
+  }
+
+  .policy-prose h2 + *,
+  .policy-prose h3 + * {
+    @apply mt-3;
+  }
+
+  .policy-prose ul {
+    @apply grid gap-4;
+  }
+
+  .policy-prose li {
+    @apply relative pl-7;
+  }
+
+  .policy-prose li::before {
+    content: "";
+    @apply absolute top-4 left-0 h-px w-3.5 bg-brick;
+  }
+
+  .policy-prose strong {
+    @apply font-semibold text-space;
+  }
+
+  .policy-prose a {
+    @apply text-brick underline underline-offset-4 transition hover:text-lava;
+  }
 }
 
 .hero-title-primary {
