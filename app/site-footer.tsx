@@ -7,7 +7,14 @@ export function SiteFooter() {
       <div className="shell">
         <div className="grid gap-12 py-14 sm:grid-cols-2 sm:py-16 lg:grid-cols-[1.15fr_.65fr_.85fr_1fr] lg:gap-16">
           <div className="max-w-md">
-            <Link href="/" className="inline-block text-3xl font-semibold text-cream sm:text-4xl">GÖZÜTOK</Link>
+            <Link href="/" aria-label="Gözütok Grup ana sayfa" className="relative block h-12 w-48 overflow-hidden sm:w-56">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/q-06.svg"
+                alt="Gözütok Grup"
+                className="absolute left-1/2 top-1/2 w-[128%] max-w-none -translate-x-1/2 -translate-y-1/2 invert"
+              />
+            </Link>
             <p className="mt-5 text-sm leading-7 text-white/55">Beş farklı uzmanlık alanını ortak yönetim anlayışı, sürdürülebilir büyüme ve kalıcı değer hedefiyle bir araya getiriyoruz.</p>
           </div>
 

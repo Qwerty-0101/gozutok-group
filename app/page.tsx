@@ -699,7 +699,6 @@ export default function Home() {
 const BRAND_LINKS = {
   flux: "https://www.gozutokflux.com/",
   gmt: "https://www.gozutokmetal.com.tr/",
-  teknik: "https://teknovateknik.com/",
   build: "https://www.gozutokbuild.com/",
   chluxe: "https://www.chluxe.tr/",
   defence: "https://gozutokdefence.com/tr",
@@ -711,7 +710,6 @@ const LOGO_SET: { src: string; alt: string; href: string | null }[] = [
   { src: "/q-04.svg", alt: "Chluxe Royal", href: BRAND_LINKS.chluxe },
   { src: "/q-02.svg", alt: "Gözütok Defence", href: BRAND_LINKS.defence },
   { src: "/q-03.svg", alt: "Gözütok Build", href: BRAND_LINKS.build },
-  { src: "/q-07.svg", alt: "Gözütok Teknik Mühendislik", href: BRAND_LINKS.teknik },
   { src: "/iron1.svg", alt: "Gözütok Grup", href: "#markalar" },
 ];
 
